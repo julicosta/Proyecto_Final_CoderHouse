@@ -1,0 +1,34 @@
+@media screen and (max-width: 800px) {
+
+  .container-row-img-services{
+    flex-direction: column;
+
+    .service-img-grid{
+      max-width: 100%;
+    }
+
+  }
+  
+  
+
+    .section1,
+    .section2 {
+      @include flexDynamic(column, nowrap, center, center, 0); // Flex en dirección columna
+    }
+  
+    .col2,
+    .col3 {
+      @include flex-center(column, center, center, 0); // Centrado de elementos
+      margin: 20px;
+      
+      p {
+        max-width: 320px;
+      }
+    }
+  
+    main {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  

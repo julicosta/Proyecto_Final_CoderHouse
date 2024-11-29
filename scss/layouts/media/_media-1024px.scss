@@ -1,0 +1,41 @@
+@media screen and (max-width: 1024px) {
+
+  .services-grid .detailing-options{
+    gap: 20px;
+  }
+
+   .video{
+    img{
+      object-fit: contain;
+      height: auto;
+    }
+   }
+
+    #section1-team{
+        flex-direction: column;
+    }
+
+    .row-section1{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card{
+        margin-top: 30px;
+        max-width: 100%;
+      }
+    }
+
+    .team-img-grid{
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        img {
+          width: 150px; /* Reducir el tamaño de las imágenes */
+          height: 150px;
+        }
+    
+        .person p {
+          font-size: 20px; /* Reducir el tamaño del texto */
+        }
+      }
+
+  }
+  

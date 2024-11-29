@@ -1,0 +1,386 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+  }
+
+  main {
+    flex: 1;
+    background-color: $negro;
+    width: 100%;
+
+    .video {
+      max-width: 68%;
+      margin: 40px auto;
+  }
+  
+    img {
+      width: 100%;
+      height: 20.8125rem;
+      object-fit: cover;
+    }
+  
+    .home-container {
+      position: relative;
+  
+      .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: $blanco;
+  
+        h1 {
+          font-size: 3rem;
+        }
+  
+        h3 {
+          font-size: 1.5rem;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  .section1, .section2 {
+    @include flex-center(row, center, center);
+    gap: 30px;
+  
+    img {
+      margin: 30px 30px 10px;
+      object-fit: cover;
+      width: 100%;
+      max-width: $maxWidthImg;
+      max-height: $maxHeightImg;
+    }
+  
+    &.section2 {
+      margin-bottom: 30px;
+    }
+  }
+  
+  .col2, .col3 {
+    @include flex-center(column, center, start);
+  }
+  
+  .col2 p, .col3 p {
+    color: $blanco;
+    max-width: 290px;
+    margin-bottom: 20px;
+  }
+  
+  .col2 h2, .col2 h3 {
+    color: $blanco;
+    max-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .btn-try {
+    @include button(100px, 3px, $negro, $colorPrincipal);
+    margin: 0 auto;
+  }
+  
+  .section2-about {
+    @include flex-center(row, space-around, center);
+    margin: 100px auto;
+    gap: 40px;
+    max-width: $maxwidth;
+  }
+  
+  .cols {
+    @include flex-center(row, none, center);
+    width: auto;
+    max-width: 500px;
+    padding: 25px 20px;
+    height: auto;
+    background-color: $colorPrincipalOscuro;
+    border-radius: $borderRadius;
+    gap: 10px;
+    align-items: center;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    img {
+      width: 73px;
+      height: 67px;
+      background-color: $colorPrincipal;
+      border-radius: $borderRadius;
+    }
+  
+    .col-content {
+      margin-left: 5px;
+      display: flex;
+      flex-direction: column;
+      min-height: 96px;
+      justify-content: start;
+      gap: 6.5px;
+    }
+  
+    h4 {
+      color: $blanco;
+      font-weight: 500;
+      font-size: 24px;
+    }
+  
+    p {
+      color: $blanco;
+    }
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "basic-wash interior-detailing express-car-wash"
+      "complete-wash paint-treatment exterior-detailing"
+      "tire-chassis-decontamination premium-detailing premium-detailing";
+    gap: 20px;
+    padding: 20px;
+    max-width: $maxwidth;
+    margin: 0 auto;
+  
+    .service-item {
+      max-width: 80%;
+      border-top: 2px solid $blanco;
+      color: $blanco;
+  
+      h3 {
+        margin-bottom: 10px;
+      }
+  
+      ul li {
+        margin-bottom: 5px;
+      }
+    }
+  
+    .detailing-options {
+      @include flex-center(row, center, none);
+  
+      .detailing-option {
+        flex: 1;
+      }
+    }
+  
+    .basic-wash { grid-area: basic-wash; }
+    .interior-detailing { grid-area: interior-detailing; }
+    .express-car-wash { grid-area: express-car-wash; }
+    .complete-wash { grid-area: complete-wash; }
+    .paint-treatment { grid-area: paint-treatment; }
+    .exterior-detailing { grid-area: exterior-detailing; }
+    .tire-chassis-decontamination { grid-area: tire-chassis-decontamination; }
+    .premium-detailing { grid-area: premium-detailing; }
+  }
+  
+  .container-row-img-services {
+    margin: 40px auto;
+    max-width: $maxwidth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .service-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 50%;
+    width: 100%;
+  }
+  
+  .container-row-img-services img {
+    border-radius: $borderRadius;
+  }
+  
+  .service-img-grid img {
+    width: 100%;
+    height: 108px;
+  }
+  
+  .img-1 {
+    width: 100%;
+    height: 236px;
+  }
+  
+  .team-img-grid {
+    max-width: $maxwidth;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    place-items: center;
+    margin: 20px auto;
+  
+    .person {
+      p{
+        @include flex-center(row, center, none);
+        color: #fff;
+        margin-top: 10px;
+        transition: font-size 0.3s ease;
+      }
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: none;
+      transition: 0.3s;
+  
+      &:hover {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow:
+          0 0 15px rgba(255, 255, 255, 0.8),
+          0 0 30px rgba(255, 255, 255, 0.5),
+          0 0 45px rgba(255, 255, 255, 0.2);
+        }
+        &:hover + p {
+          font-size: 20px;
+        }
+      }
+    }
+
+
+    .row-section1{
+      @include flex-center(row, space-between, start);
+      margin: 40px auto;
+      max-width: 68%;
+
+      .col-izq{
+        @include flex-center(column, none, none, 15px);
+        color: $blanco;
+
+        .col-izq-wpp, .col-izq-mail{
+          @include flex-center(row, none, center, 8px);
+          i {
+            color: $colorPrincipal;
+            font-size: 40px;
+        }
+        }
+      }
+
+    .card {
+      @include flex-center(column, none, center);
+        background-color: $colorPrincipalOscuro;
+        border-radius: $borderRadius;
+        padding: 25px 10px 25px 10px;
+        max-width: 50%;
+
+        .book-row1{
+          @include flex-center(column, center, center);
+          margin-bottom: 1.25rem;
+        }
+
+        .book-row2 {
+          display: flex;
+          gap: 30px;
+          margin-bottom: 10px;
+        }
+
+        .book-row3 {
+          display: flex;
+              gap: 30px;
+              margin-bottom: 10px;
+              max-width: 100%;
+              width: 100%;
+              justify-content: center;
+
+          .cont-date{
+            width: 100%;
+            max-width: 40%;
+          }
+
+        }
+
+        .book-row4 {
+          display: flex;
+          flex-direction: column;
+          max-width: 85%;
+          width: 100%;
+
+          button {
+            margin-top: 10px;
+            padding: 8px;
+            width: 200px;
+            border: #000 solid 1px;
+            border-radius: .35rem;
+          }
+
+          textarea {
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 20px;
+            max-height: 100px;
+            width: 100%;
+            height: 20px;
+            border: none;
+            background: none;
+            border-bottom: solid 1px #000;
+        }
+        }
+
+        .row4-button {
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+      }
+
+        input[type="text"] {
+          border: none;
+          background: none;
+          border-bottom: solid 0.5px #000;
+          max-width: 100%;
+          width: 100%;
+      }
+
+      .cont-date input[type="date"] {
+        max-width: 100%;
+        width: 100%;
+        border: none;
+        border-bottom: solid 0.5px #000;
+        background: none;
+    }
+
+        h2 {
+          color: $blanco;
+          font-size: 25px;
+        }
+      
+        p {
+          color: $blanco;
+        }
+      
+        .card-footer {
+          @include flex-center(row, space-between, center);
+          margin-top: 10px;
+      
+          i {
+            font-size: 20px;
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+      
+      input[type="submit"], .submit-button {
+        @include button(100px, 10px, $blanco, $colorPrincipal);
+        margin-top: 10px;
+      
+        &:hover {
+          background-color: $blanco;
+          color: $colorPrincipal;
+        }
+      }
+      
+      .button-row {
+        @include flex-center(row, center, center);
+      }
+    }

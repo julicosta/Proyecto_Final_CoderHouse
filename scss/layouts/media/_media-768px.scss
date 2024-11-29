@@ -1,0 +1,62 @@
+@media screen and (max-width: 768px) {
+    header{
+    position: relative;
+    z-index: 1000;
+        .nav-bar {
+            position: static;
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: $blanco;
+                font-size: 1.5rem;
+                cursor: pointer;
+              }
+              #menu-items {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: $negro;
+                width: 100%;
+                max-width: 100px;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba($negro, 0.2);
+          
+                &.show {
+                  display: block;
+                }
+          
+                li {
+                  margin-bottom: 0.5rem;
+                }
+          
+                a {
+                  color: $blanco;
+                  text-decoration: none;
+                  display: block;
+                  padding: 0.5rem 0;
+                }
+        }
+    }
+  }
+
+  .row-section1{
+    p{
+      font-size: 12px;
+
+    }
+    .card{
+
+      .book-row3{
+        justify-content: space-between;
+      }
+
+      h2{
+        font-size: 20px;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,47 @@
+/*
+es un bloque de codigo que posee varias propiedas que funcionaran entre si
+*/
+
+//con "@include flex" voy a poder agregar estos estilos dentro de cualquier layout y contenedor.
+@mixin flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+
+//EN ESTE CASO AL LLAMAR "@include flex" TENDRIAS QUE PASARLE POR PARAMETROS LOS VALORES QUE ESTAS PIDIENDO
+//EJEMPLO: include flex(column, wrap, center, center, 1.25rem);
+@mixin flexDynamic ($flex-direction, $flex-wrap, $justify-content, $align-items, $gap){
+    display: flex;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap; 
+}
+
+// Mixin para botones
+@mixin button($width, $padding, $color, $background) {
+    width: $width;
+    padding: $padding;
+    border-radius: $borderRadius;
+    color: $color;
+    background-color: $background;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  // Mixin para flexbox
+  @mixin flex-center($direction: row, $justify: center, $align: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+  }
+  

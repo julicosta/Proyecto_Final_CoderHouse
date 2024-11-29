@@ -1,0 +1,50 @@
+header {
+    @include flex-center(row, space-around, center);
+    width: 100%;
+    height: $headerHeight;
+    background-color: $negro;
+  
+    img {
+      width: 8rem;
+      height: 3rem;
+    }
+  
+    .nav-bar {
+      
+      .menu-toggle{
+        display: none;
+      }
+
+      ul {
+        @include flex-center(row, space-between, center, 20px);
+        list-style-type: none;
+      }
+  
+      a {
+        text-decoration: none;
+        color: $blanco;
+        cursor: pointer;
+        
+        &.activehome,
+        &.activeabout,
+        &.activeservice,
+        &.activeteam,
+        &.activecontact {
+          color: $colorPrincipal;
+       }
+      }
+    }
+  }
+  
+  .container-nav {
+    @include flex-center(row, space-between, center);
+    width: 100%;
+    max-width: $maxwidth;
+  }
+  img {
+    width: 100%;
+    height: $headerImgHeight;
+    object-fit: cover;
+  }
+
+  

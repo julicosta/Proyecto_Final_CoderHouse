@@ -1,0 +1,6 @@
+@media screen and (max-width: 1637px) {
+    .section2-about {
+      @include flex-center(column, center, center, 40px);
+    }
+  }
+  

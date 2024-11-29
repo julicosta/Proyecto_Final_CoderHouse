@@ -1,0 +1,47 @@
+footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: $negro;
+
+  .footer-container {
+      position: relative; // Mantener como relative por defecto
+
+      img[alt="fondo-footer"] {
+          height: 10.3125rem;
+          width: 100%;
+          object-fit: cover;
+      }
+
+      .logo-footer {
+          position: absolute; // Posición absoluta por defecto
+          top: 50%;
+          left: 20%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+      }
+
+      img[alt="logo-footer"] {
+          width: 8rem;
+          height: 3rem;
+      }
+
+      .redes-footer {
+          @include flex-center(none, none, none, 1.5rem);
+          position: absolute; // Posición absoluta por defecto
+          top: 50%;
+          left: 78%;
+          transform: translate(-50%, -50%);
+          color: $blanco;
+
+          i {
+              font-size: 1.875rem;
+          }
+
+          a {
+              text-decoration-line: none;
+              color: $colorPrincipal;
+          }
+      }
+  }
+}
